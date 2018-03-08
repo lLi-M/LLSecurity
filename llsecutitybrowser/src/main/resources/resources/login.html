@@ -1,0 +1,41 @@
+<!--Created by IntelliJ IDEA.-->
+<!--User: 李 雷-->
+<!--Date: 2017/12/31-->
+<!--Time: 12:08-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>登录</h1>
+<form action="/authentication/form" method="post">
+    用户名:<input type="text" name="username">
+    密码:<input type="password" name="password">
+    图形验证码：<input type="text" name="vaildcodetext">
+    <img name="vaildcode" src="/login/vaildcode" onclick="vaild()"/>
+    <input type="checkbox" name="remember-me" value="true">记住我
+    <input type="submit" value="提交">
+    <script type="text/javascript">
+        function vaild() {
+            location.href = "/login.html"
+        }
+    </script>
+</form>
+
+<br>
+
+<form action="/authentication/mobile" method="post">
+    手机号:<input type="text" name="mobile">
+    手机验证码:<input type="text" name="smscode">
+    <a href="XXXX">获取手机验证码</a>
+    <input type="submit" value="提交">
+</form>
+
+<h3>社交登录</h3>
+<!--由2个元素控制，一个是social拦截的url，一个是providerId-->
+<!--redirectUrl就是由他确定的（要和网站上注册的一样）-->
+<a href="/auth/qq">QQ登录</a>
+</body>
+</html>
